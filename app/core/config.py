@@ -19,6 +19,11 @@ class Settings(BaseSettings):
     database_name: str = "strumspace"
     database_user: str = "strumspace_user"
     database_password: SecretStr = SecretStr("YOUR_STRONG_PASSWORD")
+    database_pool_size: int = Field(default=5, ge=1)
+    database_max_overflow: int = Field(default=10, ge=0)
+    database_pool_timeout: float = Field(default=30.0, gt=0)
+    database_pool_recycle: int = Field(default=1800, ge=0)
+    database_echo: bool = False
 
     @field_validator(
         "database_name",

@@ -43,7 +43,7 @@ Environment variables use the `STRUMSPACE_` prefix. The application uses
 ### Local MySQL development
 
 StrumSpace uses **MySQL 8.4 LTS** as its local development database. Install MySQL
-locally and ensure the server is running on port `3306` (or update the values in
+locally and ensure the server is running on port `3307` (or update the values in
 `.env`). Docker is not part of the current development workflow.
 
 Create the StrumSpace development database and a dedicated application user
@@ -64,14 +64,37 @@ testing infrastructure in Task 1.8.
 To verify the application credentials manually:
 
 ```bash
-mysql -h localhost -P 3306 -u strumspace_app -p strumspace
+mysql -h localhost -P 3307 -u strumspace_app -p strumspace
 ```
 
 To verify that the configured user has access to the development database, run
 `SELECT DATABASE();` after connecting and confirm it returns `strumspace`.
 
 To verify connectivity with the application itself, use the database connection
-verification implemented in Task 1.5.
+verification implemented in Task 1.5. The application creates an asynchronous
+SQLAlchemy engine using the `mysql+asyncmy` driver, checks the database during
+startup, and disposes its connection pool during shutdown.
+
+The database pool can be tuned through `STRUMSPACE_DATABASE_POOL_SIZE`,
+`STRUMSPACE_DATABASE_MAX_OVERFLOW`, `STRUMSPACE_DATABASE_POOL_TIMEOUT`, and
+`STRUMSPACE_DATABASE_POOL_RECYCLE`. Set `STRUMSPACE_DATABASE_ECHO=true` only
+when SQL statement logging is needed during local development.
+
+For a direct connectivity check, run:
+
+```bash
+uv run python -c "import asyncio; from app.db.engine import verify_database_connection; asyncio.run(verify_database_connection())"
+```
+
+Database-backed routes can request a request-scoped session through the
+`get_db_session` dependency from `app.db.dependencies`. The dependency closes
+the session after each request. Services should define explicit transaction
+boundaries with `async with session.begin():`; the dependency does not commit
+implicitly.
+
+If the database is unavailable, application startup fails rather than starting
+an instance that cannot perform database operations.
+
 
 Database connectivity is not claimed as verified by this setup documentation
 until MySQL is installed locally and the Task 1.5 integration check succeeds.
