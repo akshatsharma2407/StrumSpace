@@ -9,7 +9,7 @@ from app.db.engine import dispose_engine, verify_database_connection
 
 
 @asynccontextmanager
-async def lifespan() -> AsyncIterator[None]:
+async def lifespan(_: FastAPI) -> AsyncIterator[None]:
     await verify_database_connection()
     try:
         yield
