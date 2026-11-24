@@ -51,8 +51,8 @@ from a MySQL administrative account:
 
 ```sql
 CREATE DATABASE strumspace CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER 'strumspace_app'@'localhost' IDENTIFIED BY 'change-me';
-GRANT ALL PRIVILEGES ON strumspace.* TO 'strumspace_app'@'localhost';
+CREATE USER 'strumspace_user'@'localhost' IDENTIFIED BY 'YOUR_STRONG_PASSWORD';
+GRANT ALL PRIVILEGES ON strumspace.* TO 'strumspace_user'@'localhost';
 FLUSH PRIVILEGES;
 ```
 

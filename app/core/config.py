@@ -15,10 +15,10 @@ class Settings(BaseSettings):
     api_v1_prefix: str = "/api/v1"
     timezone: str = "Asia/Kolkata"
     database_host: str = "localhost"
-    database_port: int = Field(default=3306, ge=1, le=65535)
+    database_port: int = Field(default=3307, ge=1, le=65535)
     database_name: str = "strumspace"
-    database_user: str = "strumspace_app"
-    database_password: SecretStr = SecretStr("change-me")
+    database_user: str = "strumspace_user"
+    database_password: SecretStr = SecretStr("YOUR_STRONG_PASSWORD")
 
     @field_validator(
         "database_name",
