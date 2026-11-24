@@ -138,9 +138,9 @@ These decisions are not Phase 0 omissions. They are part of the agreed increment
 - [x] Development milestones.
 - [x] Optional future scope identified.
 - [x] Documentation consistency review performed.
-- [ ] Final corrections saved in the project repository.
-- [ ] Final user approval of Phase 0.
-- [ ] Project phase updated to Phase 1 after approval.
+- [x] Final corrections saved in the project repository.
+- [x] Final user approval of Phase 0.
+- [x] Project phase updated to Phase 1 after approval.
 
 ---
 

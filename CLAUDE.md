@@ -31,7 +31,8 @@ Do not treat this as a project where you should autonomously build everything fo
 
 The project will be developed in defined phases.
 
-- Currently in phase-0 (@.claude/phases/phase-0.md)
+-  phase-0 is completed
+-  phase-1 will now get started (@.claude/phases/phase-1.md)
 
 Never assume that discussing a technical concept means I have approved its implementation.
 
