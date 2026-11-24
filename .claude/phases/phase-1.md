@@ -153,7 +153,7 @@ Establish a local MySQL database environment for application development.
 
 ### Task 1.5 — Async Database Integration
 
-**Status:** Pending
+**Status:** Completed
 
 Integrate the FastAPI application with MySQL using SQLAlchemy's asynchronous database interface.
 
@@ -171,13 +171,13 @@ Integrate the FastAPI application with MySQL using SQLAlchemy's asynchronous dat
 
 **Acceptance Criteria:**
 
-- [ ] Application connects to MySQL successfully.
-- [ ] Database operations support asynchronous execution.
-- [ ] Database sessions are properly created and closed.
-- [ ] Request-scoped session dependencies are available.
-- [ ] Connection pooling is configured appropriately.
-- [ ] Transaction and rollback behavior is understood and established.
-- [ ] Database resources are released correctly during application shutdown.
+- [x] Application connects to MySQL successfully.
+- [x] Database operations support asynchronous execution.
+- [x] Database sessions are properly created and closed.
+- [x] Request-scoped session dependencies are available.
+- [x] Connection pooling is configured appropriately.
+- [x] Transaction and rollback behavior is understood and established.
+- [x] Database resources are released correctly during application shutdown.
 
 ---
 
@@ -374,16 +374,16 @@ In particular:
 | 1.2 | FastAPI Application Foundation | Completed |
 | 1.3 | Configuration Management | Completed |
 | 1.4 | Local MySQL Infrastructure | Completed |
-| 1.5 | Async Database Integration | Pending |
+| 1.5 | Async Database Integration | Completed |
 | 1.6 | Database Migration Infrastructure | Pending |
 | 1.7 | Logging & Error Handling | Pending |
 | 1.8 | Testing Infrastructure & Foundation Verification | Pending |
 
-**Current Active Task:** 1.5 — Async Database Integration
+**Current Active Task:** 1.6 — Database Migration Infrastructure
 
-**Completed Tasks:** 4/8
+**Completed Tasks:** 5/8
 
-**Completed Task:** 1.4 — Local MySQL Infrastructure
+**Completed Task:** 1.5 — Async Database Integration
 
 ---
 
