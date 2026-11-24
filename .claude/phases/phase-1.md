@@ -1,9 +1,13 @@
 # Phase 1 — Backend Foundation
 
-**Phase:** 1  
-**Milestone:** M1 — Backend Foundation  
-**Status:** In Progress  
-**Start Date:** 24 November 2026  
+**Phase:** 1
+
+**Milestone:** M1 — Backend Foundation
+
+**Status:** In Progress
+
+**Start Date:** 24 November 2026
+
 **Previous Phase:** Phase 0 — Product Discovery & Architecture (Completed)
 
 ---
@@ -118,32 +122,32 @@ Establish centralized and environment-based application configuration.
 
 ---
 
-### Task 1.4 — MySQL & Docker Infrastructure
+### Task 1.4 — Local MySQL Infrastructure
 
-**Status:** Pending
+**Status:** Completed
 
-Establish the containerized development infrastructure.
+Establish a local MySQL database environment for application development.
 
 **Scope:**
 
 - Select an appropriate MySQL version.
-- Create the application Dockerfile.
-- Configure Docker Compose.
-- Configure MySQL credentials and database initialization.
-- Establish persistent database storage.
-- Configure container networking.
-- Configure service health checks.
-- Establish the local containerized development workflow.
+- Install and configure MySQL on the local machine, if not already installed.
+- Create the StrumSpace development database.
+- Create a dedicated database user and configure appropriate privileges.
+- Configure database credentials through environment variables.
+- Verify local database connectivity.
+- Document the local database setup process.
 
 **Acceptance Criteria:**
 
-- [ ] Application Docker image builds successfully.
-- [ ] MySQL runs successfully through Docker Compose.
-- [ ] Application and database containers can communicate.
-- [ ] Database data persists across container restarts.
-- [ ] Database credentials are externally configured.
-- [ ] Infrastructure can be started and stopped using documented commands.
-- [ ] Container health checks operate correctly.
+- [x] MySQL server is installed and running locally.
+- [x] StrumSpace development database is created.
+- [x] Dedicated database user is configured with appropriate privileges.
+- [x] Database credentials are externally configured.
+- [x] Database connectivity is verified using the configured credentials.
+- [x] Local database setup instructions are documented.
+
+**Note:** Docker and Docker Compose implementation for both the backend and database is intentionally deferred until M10 — Hardening & Production Readiness. Application-level database integration will be implemented separately in Task 1.5.
 
 ---
 
@@ -332,6 +336,7 @@ During Phase 1, do not implement:
 - Frontend functionality.
 - Business-specific database entities.
 - A complete database schema or ERD.
+- Docker and Docker Compose (including backend and database containerization).
 - Production deployment infrastructure.
 
 Only introduce infrastructure and abstractions that are necessary for the current phase.
@@ -368,15 +373,17 @@ In particular:
 | 1.1 | Project Initialization | Completed |
 | 1.2 | FastAPI Application Foundation | Completed |
 | 1.3 | Configuration Management | Completed |
-| 1.4 | MySQL & Docker Infrastructure | Pending |
+| 1.4 | Local MySQL Infrastructure | Completed |
 | 1.5 | Async Database Integration | Pending |
 | 1.6 | Database Migration Infrastructure | Pending |
 | 1.7 | Logging & Error Handling | Pending |
 | 1.8 | Testing Infrastructure & Foundation Verification | Pending |
 
-**Current Active Task:** 1.4 — MySQL & Docker Infrastructure
+**Current Active Task:** 1.5 — Async Database Integration
 
-**Completed Tasks:** 3/8
+**Completed Tasks:** 4/8
+
+**Completed Task:** 1.4 — Local MySQL Infrastructure
 
 ---
 
@@ -387,8 +394,8 @@ Phase 1 can be considered complete when:
 - [ ] All Phase 1 tasks are completed and approved.
 - [ ] The development environment is reproducible.
 - [ ] FastAPI application runs successfully.
-- [ ] MySQL infrastructure is operational.
-- [ ] Application and database services run through Docker Compose.
+- [ ] Local MySQL infrastructure is operational.
+- [ ] FastAPI and MySQL run directly on the local machine without Docker.
 - [ ] Async database connectivity and session management are functional.
 - [ ] Alembic migration infrastructure is operational.
 - [ ] Configuration and secrets are managed appropriately.

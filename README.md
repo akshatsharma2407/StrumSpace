@@ -40,6 +40,60 @@ The `.env` file is ignored by Git and must not contain values that should be com
 Environment variables use the `STRUMSPACE_` prefix. The application uses
 `Asia/Kolkata` as its default project timezone.
 
+### Local MySQL development
+
+StrumSpace uses **MySQL 8.4 LTS** as its local development database. Install MySQL
+locally and ensure the server is running on port `3306` (or update the values in
+`.env`). Docker is not part of the current development workflow.
+
+Create the StrumSpace development database and a dedicated application user
+from a MySQL administrative account:
+
+```sql
+CREATE DATABASE strumspace CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'strumspace_app'@'localhost' IDENTIFIED BY 'change-me';
+GRANT ALL PRIVILEGES ON strumspace.* TO 'strumspace_app'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+Use a different password in a real local environment and set the same value in
+`.env` as `STRUMSPACE_DATABASE_PASSWORD`. The application must not use the MySQL
+root account. A separate test database and test user will be introduced with the
+testing infrastructure in Task 1.8.
+
+To verify the application credentials manually:
+
+```bash
+mysql -h localhost -P 3306 -u strumspace_app -p strumspace
+```
+
+To verify that the configured user has access to the development database, run
+`SELECT DATABASE();` after connecting and confirm it returns `strumspace`.
+
+To verify connectivity with the application itself, use the database connection
+verification implemented in Task 1.5.
+
+Database connectivity is not claimed as verified by this setup documentation
+until MySQL is installed locally and the Task 1.5 integration check succeeds.
+
+The task's MySQL setup is intentionally local-only. Docker and Docker Compose are
+deferred until M10, as documented in the phase plan.
+
+The local setup is complete when MySQL is running, the `strumspace` database
+exists, and `strumspace_app` can connect with the credentials in `.env`.
+
+Start and stop the MySQL service using the service manager provided by the local
+MySQL installation. Stopping and restarting the service preserves database data;
+resetting a database should be an explicit administrative operation.
+
+The application settings validate database identifiers, the port, host, and
+non-empty passwords. Database engine and session configuration will be added in
+Task 1.5.
+
+The application settings validate database identifiers, the port, host, and
+non-empty passwords. Database engine and session configuration will be added in
+Task 1.5.
+
 ### Run tests
 
 ```bash

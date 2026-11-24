@@ -2,7 +2,7 @@ from functools import lru_cache
 from typing import Literal
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-from pydantic import field_validator
+from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -14,6 +14,35 @@ class Settings(BaseSettings):
     log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"] = "INFO"
     api_v1_prefix: str = "/api/v1"
     timezone: str = "Asia/Kolkata"
+    database_host: str = "localhost"
+    database_port: int = Field(default=3306, ge=1, le=65535)
+    database_name: str = "strumspace"
+    database_user: str = "strumspace_app"
+    database_password: SecretStr = SecretStr("change-me")
+
+    @field_validator(
+        "database_name",
+        "database_user",
+    )
+    @classmethod
+    def validate_database_identifier(cls, value: str) -> str:
+        if not value or not value.replace("_", "").isalnum():
+            raise ValueError("Database names and users may contain only letters, numbers, and underscores")
+        return value
+
+    @field_validator("database_host")
+    @classmethod
+    def validate_database_host(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("Database host must not be empty")
+        return value
+
+    @field_validator("database_password")
+    @classmethod
+    def validate_database_password(cls, value: SecretStr) -> SecretStr:
+        if not value.get_secret_value():
+            raise ValueError("Database password must not be empty")
+        return value
 
     model_config = SettingsConfigDict(
         env_file=".env",
