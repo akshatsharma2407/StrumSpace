@@ -67,7 +67,7 @@ Establish the Python development environment and initial project structure.
 
 ### Task 1.2 — FastAPI Application Foundation
 
-**Status:** Pending
+**Status:** Completed
 
 Initialize the FastAPI application and establish the basic application lifecycle.
 
@@ -83,12 +83,12 @@ Initialize the FastAPI application and establish the basic application lifecycle
 
 **Acceptance Criteria:**
 
-- [ ] FastAPI application starts successfully.
-- [ ] Application entry point is clearly defined.
-- [ ] API versioning follows ADR-001.
-- [ ] Health-check endpoint returns a successful response.
-- [ ] Swagger documentation is accessible.
-- [ ] Application startup and shutdown work correctly.
+- [x] FastAPI application starts successfully.
+- [x] Application entry point is clearly defined.
+- [x] API versioning follows ADR-001.
+- [x] Health-check endpoint returns a successful response.
+- [x] Swagger documentation is accessible.
+- [x] Application startup and shutdown work correctly.
 
 ---
 
@@ -366,7 +366,7 @@ In particular:
 | Task | Description | Status |
 |---|---|---|
 | 1.1 | Project Initialization | Completed |
-| 1.2 | FastAPI Application Foundation | Pending |
+| 1.2 | FastAPI Application Foundation | Completed |
 | 1.3 | Configuration Management | Pending |
 | 1.4 | MySQL & Docker Infrastructure | Pending |
 | 1.5 | Async Database Integration | Pending |
@@ -374,9 +374,9 @@ In particular:
 | 1.7 | Logging & Error Handling | Pending |
 | 1.8 | Testing Infrastructure & Foundation Verification | Pending |
 
-**Current Active Task:** 1.2 — FastAPI Application Foundation
+**Current Active Task:** 1.3 — Configuration Management
 
-**Completed Tasks:** 1/8
+**Completed Tasks:** 2/8
 
 ---
 
