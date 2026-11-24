@@ -27,6 +27,19 @@ Run Python commands through the managed environment with `uv run`:
 uv run python --version
 ```
 
+### Configuration
+
+The application loads configuration from environment variables. For local development,
+copy `.env.example` to `.env` and adjust the values as needed:
+
+```bash
+cp .env.example .env
+```
+
+The `.env` file is ignored by Git and must not contain values that should be committed.
+Environment variables use the `STRUMSPACE_` prefix. The application uses
+`Asia/Kolkata` as its default project timezone.
+
 ### Run tests
 
 ```bash

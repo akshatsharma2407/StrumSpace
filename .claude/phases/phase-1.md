@@ -94,7 +94,7 @@ Initialize the FastAPI application and establish the basic application lifecycle
 
 ### Task 1.3 — Configuration Management
 
-**Status:** Pending
+**Status:** Completed
 
 Establish centralized and environment-based application configuration.
 
@@ -109,12 +109,12 @@ Establish centralized and environment-based application configuration.
 
 **Acceptance Criteria:**
 
-- [ ] Application configuration is centrally managed.
-- [ ] Settings can be loaded from environment variables.
-- [ ] Required configuration values are validated.
-- [ ] Sensitive credentials are not committed to Git.
-- [ ] `.env.example` documents required environment variables.
-- [ ] Timezone configuration follows ADR-001.
+- [x] Application configuration is centrally managed.
+- [x] Settings can be loaded from environment variables.
+- [x] Required configuration values are validated.
+- [x] Sensitive credentials are not committed to Git.
+- [x] `.env.example` documents required environment variables.
+- [x] Timezone configuration follows ADR-001.
 
 ---
 
@@ -367,16 +367,16 @@ In particular:
 |---|---|---|
 | 1.1 | Project Initialization | Completed |
 | 1.2 | FastAPI Application Foundation | Completed |
-| 1.3 | Configuration Management | Pending |
+| 1.3 | Configuration Management | Completed |
 | 1.4 | MySQL & Docker Infrastructure | Pending |
 | 1.5 | Async Database Integration | Pending |
 | 1.6 | Database Migration Infrastructure | Pending |
 | 1.7 | Logging & Error Handling | Pending |
 | 1.8 | Testing Infrastructure & Foundation Verification | Pending |
 
-**Current Active Task:** 1.3 — Configuration Management
+**Current Active Task:** 1.4 — MySQL & Docker Infrastructure
 
-**Completed Tasks:** 2/8
+**Completed Tasks:** 3/8
 
 ---
 
