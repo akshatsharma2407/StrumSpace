@@ -1,5 +1,3 @@
-from collections.abc import AsyncIterator
-
 from sqlalchemy import text
 from sqlalchemy.engine import URL
 from sqlalchemy.ext.asyncio import (
