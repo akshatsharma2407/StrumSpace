@@ -209,7 +209,7 @@ Establish database schema versioning using Alembic.
 
 ### Task 1.7 — Logging & Error Handling
 
-**Status:** Pending
+**Status:** Completed
 
 Establish consistent application logging and exception handling.
 
@@ -226,12 +226,12 @@ Establish consistent application logging and exception handling.
 
 **Acceptance Criteria:**
 
-- [ ] Application logging is centrally configured.
-- [ ] Log levels can be configured.
-- [ ] Application errors are handled consistently.
-- [ ] API error responses follow the agreed format.
-- [ ] Validation errors are handled appropriately.
-- [ ] Unexpected errors are logged without exposing sensitive details to API consumers.
+- [x] Application logging is centrally configured.
+- [x] Log levels can be configured.
+- [x] Application errors are handled consistently.
+- [x] API error responses follow the agreed format.
+- [x] Validation errors are handled appropriately.
+- [x] Unexpected errors are logged without exposing sensitive details to API consumers.
 
 ---
 
@@ -376,14 +376,14 @@ In particular:
 | 1.4 | Local MySQL Infrastructure | Completed |
 | 1.5 | Async Database Integration | Completed |
 | 1.6 | Database Migration Infrastructure | Completed |
-| 1.7 | Logging & Error Handling | Pending |
+| 1.7 | Logging & Error Handling | Completed |
 | 1.8 | Testing Infrastructure & Foundation Verification | Pending |
 
-**Current Active Task:** 1.7 — Logging & Error Handling
+**Current Active Task:** 1.8 — Testing Infrastructure & Foundation Verification
 
-**Completed Tasks:** 6/8
+**Completed Tasks:** 7/8
 
-**Completed Task:** 1.6 — Database Migration Infrastructure
+**Completed Task:** 1.7 — Logging & Error Handling
 
 ---
 
