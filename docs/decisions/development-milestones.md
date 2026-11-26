@@ -19,7 +19,6 @@ Establish the core application infrastructure and development environment.
 - Configure project dependencies and environment management.
 - Set up configuration and environment variables.
 - Implement logging and application-level error handling foundations.
-- Set up MySQL with Docker and Docker Compose.
 - Configure SQLAlchemy async database connectivity and session management.
 - Initialize Alembic for database migrations.
 - Establish the testing infrastructure.
