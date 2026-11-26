@@ -119,9 +119,28 @@ Task 1.5.
 
 ### Run tests
 
+Tests use a dedicated MySQL database and user. Create them from a MySQL
+administrative account, using a test-only password:
+
+```sql
+CREATE DATABASE strumspace_test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'strumspace_test_user'@'localhost' IDENTIFIED BY 'YOUR_TEST_DATABASE_PASSWORD';
+GRANT ALL PRIVILEGES ON strumspace_test.* TO 'strumspace_test_user'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+Set the `STRUMSPACE_TEST_DATABASE_*` variables in your local environment. The
+test database name and user must differ from the development database and user.
+Apply migrations to the test database explicitly, then run:
+
 ```bash
+uv run alembic upgrade head
 uv run pytest
 ```
+
+Database tests verify `SELECT DATABASE()` and fail when test configuration would
+point at the development database. Tests must never be run with development
+database credentials in the `STRUMSPACE_TEST_DATABASE_*` variables.
 
 ### Database migrations
 
