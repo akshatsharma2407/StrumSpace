@@ -58,8 +58,11 @@ FLUSH PRIVILEGES;
 
 Use a different password in a real local environment and set the same value in
 `.env` as `STRUMSPACE_DATABASE_PASSWORD`. The application must not use the MySQL
-root account. A separate test database and test user will be introduced with the
-testing infrastructure in Task 1.8.
+root account. The test database and test user are configured separately through
+the `STRUMSPACE_TEST_DATABASE_*` variables described below.
+
+The development database remains isolated from the test database. Test execution
+must never use the development database credentials.
 
 To verify the application credentials manually:
 
