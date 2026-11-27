@@ -26,7 +26,8 @@ Before planning or implementing a task, review the relevant project documentatio
 - `docs/PRD.md` — Product requirements and enquiry workflow.
 - `docs/decisions/ADR-001.md` — Architecture, API, database, timezone, and testing standards.
 - `docs/decisions/development-milestones.md` — M2 deliverables and milestone outcome.
-- `docs/modules/enquiries/domain-rules.md` - M2 task 2.1 approved plan.
+- `docs/modules/enquiries/domain-rules.md` - M2 task 2.1 approved domain rules plan.
+- `docs/modules/enquiries/data-model.md` — M2 task 2.2 approved data model and ERD.
 - `.claude/phases/phase-0.md` — Planning decisions and incremental modeling strategy.
 - `.claude/phases/phase-1.md` — Completed backend foundation.
 - Existing code under `app/` — Configuration, database sessions, exception handling, and router registration.
@@ -150,7 +151,7 @@ Understand the actual enquiry workflow before designing tables or endpoints.
 
 ### Task 2.2 — Enquiry Data Model and ERD
 
-**Status:** Not Started  
+**Status:** Completed  
 **Depends on:** Task 2.1
 
 Design the minimum relational model required by the approved enquiry workflow. This is a design task; model and migration implementation belongs to Task 2.4.
@@ -166,13 +167,13 @@ Design the minimum relational model required by the approved enquiry workflow. T
 
 **Acceptance Criteria:**
 
-- [ ] The proposed model supports all approved M2 data requirements.
-- [ ] Columns, types, constraints, and indexes are explicitly defined and justified.
-- [ ] Timestamp interpretation follows the IST convention in ADR-001.
-- [ ] The ERD reflects the approved model and does not introduce speculative entities or relationships.
-- [ ] The database design is reviewed and approved before implementation.
+- [x] The proposed model supports all approved M2 data requirements.
+- [x] Columns, types, constraints, and indexes are explicitly defined and justified.
+- [x] Timestamp interpretation follows the IST convention in ADR-001.
+- [x] The ERD reflects the approved model and does not introduce speculative entities or relationships.
+- [x] The database design is reviewed and approved before implementation.
 
-**Verification:** Review the proposed schema and ERD against the approved domain rules.
+**Verification:** Reviewed the approved schema and ERD against the approved domain rules.
 
 ---
 
@@ -427,7 +428,7 @@ Development and test databases and credentials must remain separate. Use the exi
 | Task | Description | Status |
 |---|---|---|
 | 2.1 | Enquiry Domain Discovery and Business Rules | Completed |
-| 2.2 | Enquiry Data Model and ERD | Not Started |
+| 2.2 | Enquiry Data Model and ERD | Completed |
 | 2.3 | Enquiry Schemas and API Contract | Not Started |
 | 2.4 | Enquiry Model, Alembic Migration, and Database Integration | Not Started |
 | 2.5 | Enquiry Repository | Not Started |
@@ -436,9 +437,9 @@ Development and test databases and credentials must remain separate. Use the exi
 | 2.8 | Enquiry Testing and Failure-Scenario Coverage | Not Started |
 | 2.9 | Documentation, Review, and Phase Closure | Not Started |
 
-**Next Task:** 2.2 — Enquiry Data Model and ERD  
-**Current Active Task:** 2.2 — awaiting approval.  
-**Completed Tasks:** 1/9
+**Next Task:** 2.3 — Enquiry Schemas and API Contract  
+**Current Active Task:** 2.3 — awaiting planning and approval.  
+**Completed Tasks:** 2/9
 
 ---
 
