@@ -26,6 +26,7 @@ Before planning or implementing a task, review the relevant project documentatio
 - `docs/PRD.md` — Product requirements and enquiry workflow.
 - `docs/decisions/ADR-001.md` — Architecture, API, database, timezone, and testing standards.
 - `docs/decisions/development-milestones.md` — M2 deliverables and milestone outcome.
+- `docs/modules/enquiries/domain-rules.md` - M2 task 2.1 approved plan.
 - `.claude/phases/phase-0.md` — Planning decisions and incremental modeling strategy.
 - `.claude/phases/phase-1.md` — Completed backend foundation.
 - Existing code under `app/` — Configuration, database sessions, exception handling, and router registration.
