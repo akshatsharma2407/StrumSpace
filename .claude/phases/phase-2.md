@@ -190,7 +190,7 @@ Define the public API contract and implement the corresponding Pydantic schemas.
 - Define path and query parameter validation.
 - Define the supported filters, basic search, sort fields, sort direction, limit, and offset.
 - Establish deterministic ordering, with a tie-breaker where needed.
-- Define successful responses and standardized validation, not-found, duplicate, and invalid-transition errors.
+- Define successful responses and standardized validation, not-found, duplicate.
 - Define partial-update semantics, including omitted fields versus explicit null values.
 - Ensure datetime interpretation and serialization follow the IST convention in ADR-001.
 - Write focused schema validation tests.
